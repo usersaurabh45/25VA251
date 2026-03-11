@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // repeatedly ececute a block of code until a specified condition is met,
+
+        //for....while....do --while....for--in ....for--of
+
+        //for and 
+        let studentList=["saurabh","ayush","John"];
+        for(let i=0;i<studentList.length;i++){
+            // console.log(studentList[i]);
+             //using for----in loop = iterates over the enumerable propeties(keys)
+             for(let x in studentList){
+                console.log(studentList[x]);
+             }
+             // using for...of loop.. Iterates over the values of iterable object
+             for(let y of studentList){
+                console.log(y);
+             }
+        }
+    </script>
+</body>
+</html>
