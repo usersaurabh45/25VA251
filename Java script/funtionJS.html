@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // function:-
+
+        function demo(){
+            console.log("Hello Js");
+        }
+        demo(); // function  calling
+
+        //with parameters
+        function demo1(text){
+            console.log("Hello"+ text);
+        }
+        demo1("React");
+        //with defualt parameters 
+        function cal(a,b=9){
+            console.log("addtion of two number is "+(a+b));
+        }
+        demo1("React");
+        cal(12);
+         demo();
+
+
+         // anonyomous function :-An anonymous function is a function without a name, mainly used for specific or short-term tasks, and 
+         // is often assigned to variables or passed as arguments where reuse is not required.
+
+         let msg=function(){
+            console.log("Hello Advanced JS");
+         };
+         msg();
+         //shore code for above function i.e. arrow  function
+         let msg1=()=>console.log("Hello function as an arrow");
+         msg1();
+         // arrow function using mjultilines 
+
+         let add=(a,b)=>{
+            console.log("First number is "+a);
+            console.log("Second number is "+b);
+            console.log("addtion of two number is "+(a+b));
+         }
+         add(4,5);
+
+         // IIFE:-An IIFE (Immediately Invoked Function Expression) 
+         // is an idiom in which a JavaScript function runs as soon as it is defined. It is also known
+         //  as a self-executing anonymous function. The name IIFE is promoted by Ben Alman in his 
+
+         (function (){
+            console.log("IIFE in JS");
+         })();
+         //IIEF using arrow 
+         (() =>console.log("IIFE using arrow")) ();
+
+         function mul(callback){
+            var num1=10;
+            console.log("First value is "+num1);
+            var num2=20;
+            console.log("second Value is "+num2);
+            var res=num1*num2;
+            callback(res);
+         }
+         function result(res){
+            console.log("Multiplecation is "+res);
+             
+         }
+         mul(result);
+
+         // callback function  using Settimeout API
+         function msg2(){
+            sonsole.log("Hello call back");
+            document.writeln("Hello");
+         }
+         function loading(){
+            document.writeln("loding...........")
+         };
+         setTimeout(msg2,2000);
+         loading();
+
+
+         //map filtera and reduce
+
+         let num=[3,5,7];
+         letfinalReult=num.map(n>n*2);
+         console.log(finalResult);
+
+         // filter method:
+        let Result=num.filter(n=>n>3);
+         console.log(finalResult);
+         //reduce 
+         let finalResult2=num.reduce((total,n)=>total+n);
+         console.log(finalResult2);
+
+         //Promises:-
+         // let promises=new Promise(function(reslve,reject))
+         // let age = 55;
+         // if(age>=18){
+         //    resolve("valid age");
+         // }
+         // else
+
+
+         // astnc await.....Async/await is a modern JavaScript syntax that simplifies working with promises,
+         //  allowing asynchronous code to be written in a synchronous, easy-to-read manner
+         async function userData (){
+            try {
+               let data= await fetch('https://dummyjson.com/products');
+               let updateDate=await data.json();
+               consloe.log(updateData);
+            }
+            catch (error){
+               consloe.log("Not fetch" + error);
+            }
+         }
+         userData();
+
+         //Local storage :-JavaScript's localStorage is a feature of the Web Storage API that 
+         // allows developers to store persistent key-value data in the user's browser. 
+          let uaerInfo={
+            name:"John",
+            age:23,
+            mob:8948994797,
+            eMail:"john24@gmail.com"
+          }
+          //conver JSON object to string
+          localStorage.setItem('prefrences',JSON.stringify(userInfo));  
+
+//Retrieve the string and phase it badck ijnto an object 
+          let storagePreference=JSON.parse(localStorage.getItem ('preference'));
+          console.log(storagePreference.name);
+
+
+
+
+    </script>
+</body>
+</html>
